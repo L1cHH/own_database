@@ -21,7 +21,7 @@ func init() {
 
 type BNode []byte
 
-type Btree struct {
+type BTree struct {
 	//pointer
 	root uint64
 	//callbacks for managing on-disk operations
@@ -29,3 +29,5 @@ type Btree struct {
 	new func([]byte) uint64 // allocate a new page
 	del func(uint64)        // deallocate a page
 }
+
+

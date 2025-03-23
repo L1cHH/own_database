@@ -19,3 +19,13 @@ func init() {
 	}
 }
 
+type BNode []byte
+
+type Btree struct {
+	//pointer
+	root uint64
+	//callbacks for managing on-disk operations
+	get func(uint64) []byte // dereference a pointer
+	new func([]byte) uint64 // allocate a new page
+	del func(uint64)        // deallocate a page
+}

@@ -33,3 +33,7 @@ func (node BNode) getVal(idx uint16) []byte {
 	vlen := binary.LittleEndian.Uint16(node[pos + 2:])
 	return node[pos + 4 + klen:][:vlen]
 }
+
+func (node BNode) nbytes() uint16 {
+	return node.kvPos(node.nkeys())
+}

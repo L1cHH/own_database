@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-//func that calculates offset for given index
+//func that define offset position
 func offsetPos(node BNode, idx uint16) uint16 {
 	if idx < 1 || idx > node.nkeys() {
 		fmt.Println("idx is out of range")
